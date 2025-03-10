@@ -35,6 +35,7 @@ class Astronomy
             if (solarSystem.Contains(spaceObject))
             {
                 spaceObject.displayInfo(time);
+                Console.WriteLine("info.....");
             }
 
         }
