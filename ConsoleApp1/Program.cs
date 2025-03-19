@@ -19,32 +19,29 @@ class Astronomy
         solarSystem.Add(new Comet("C01", 100, 2000, 100, 2000, "black"));
         solarSystem.Add(new Asteroid("A01", 200, 1000, 100, 1000, "black"));        
         
-        while (true)
-        {
-            Console.Write("Enter time (number of days since time = 0: ");
-            int time = Convert.ToInt32(Console.ReadLine());
+        //while (true)
+        //{
+        //    Console.Write("Enter time (number of days since time = 0: ");
+        //    int time = Convert.ToInt32(Console.ReadLine());
            
 
-            Console.Write("Enter name of Planet or write sun for the sun: ");
-            string spaceObjectString = Console.ReadLine().Trim();
+        //    Console.Write("Enter name of Planet or write sun for the sun: ");
+        //    string spaceObjectString = Console.ReadLine().Trim();
 
-            spaceObjectString = string.IsNullOrWhiteSpace(spaceObjectString) ? "Sun" : spaceObjectString;
+        //    spaceObjectString = string.IsNullOrWhiteSpace(spaceObjectString) ? "Sun" : spaceObjectString;
 
-            SpaceObject spaceObject = solarSystem.Find(s  => s.Name == spaceObjectString);
+        //    SpaceObject spaceObject = solarSystem.Find(s  => s.Name == spaceObjectString);
 
-            if (solarSystem.Contains(spaceObject))
-            {
-                spaceObject.displayInfo(time);
-                Console.WriteLine("info.....");
-                Console.WriteLine(spaceObject.CalculatePositions(time));
-            } 
-            else
-            {
-                Console.WriteLine("That celestial body does not exist. Please try again");
-            }
-
-        }
-
-
+        //    if (solarSystem.Contains(spaceObject))
+        //    {
+        //        spaceObject.displayInfo(time);
+        //        Console.WriteLine("info.....");
+        //        Console.WriteLine(spaceObject.CalculatePositions(time));
+        //    } 
+        //    else
+        //    {
+        //        Console.WriteLine("That celestial body does not exist. Please try again");
+        //    }
+        //}
     }
 }

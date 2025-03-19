@@ -69,9 +69,8 @@ namespace SpaceSim {
             double radians = angle * (Math.PI/180); // Convert to radians
 
             int x = (int)(GetOrbitalRadius() * Math.Cos(radians));
-            //Console.WriteLine(angle);
             int y = (int)(GetOrbitalRadius() * Math.Sin(radians));
-            //Console.WriteLine(y);
+
             return (x, y);
         }
 
@@ -124,21 +123,25 @@ namespace SpaceSim {
 
         public override (int x, int y) CalculatePositions(int time)
         {
+            if (ParentPlanet == null)
+            {
+                throw new NullReferenceException("Parent planet is not assigned for the moon.");
+            }
 
-            double mAngle = time * (OrbitalPeriod / 360); // Calculate angle in degrees
-            double mRadians = mAngle * (Math.PI / 180); // Convert to radians
+            // Get Earth's (parent's) position
+            var (px, py) = ParentPlanet.CalculatePositions(time);
 
-            double pAngle = time * (ParentPlanet.GetOrbitalPeriod() / 360); // Calculate angle in degrees
-            double pRadians = pAngle * (Math.PI / 180); // Convert to radians
+            // Calculate the Moon's own position in orbit around Earth
+            double mAngle = time * (360.0 / OrbitalPeriod); // Degrees per time unit
+            double mRadians = mAngle * (Math.PI / 180.0);  // Convert to radians
 
             int mx = (int)(GetOrbitalRadius() * Math.Cos(mRadians));
             int my = (int)(GetOrbitalRadius() * Math.Sin(mRadians));
 
-            int px = (int)(ParentPlanet.GetOrbitalRadius() * Math.Cos(pRadians));
-            int py = (int)(ParentPlanet.GetOrbitalRadius() * Math.Sin(pRadians));
-            
-            return (mx + px, my + py);
+            // Return the Moon's position relative to Earth's position
+            return (px + mx, py + my);
         }
+
     }
 
     public class Comet : SpaceObject
