@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "oblig2", "oblig2\oblig2.csproj", "{5F1A3DD7-0554-4DDA-9BA8-E20F99305894}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{2F0EEEF5-182F-4B2C-BF0B-50346C924FCB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solsystem_Graphics", "Solsystem_Graphics\Solsystem_Graphics.csproj", "{163C6515-0EB2-41D1-89B0-5E615865DD12}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{2F0EEEF5-182F-4B2C-BF0B-50346C924FCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F0EEEF5-182F-4B2C-BF0B-50346C924FCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F0EEEF5-182F-4B2C-BF0B-50346C924FCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{163C6515-0EB2-41D1-89B0-5E615865DD12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{163C6515-0EB2-41D1-89B0-5E615865DD12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{163C6515-0EB2-41D1-89B0-5E615865DD12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{163C6515-0EB2-41D1-89B0-5E615865DD12}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

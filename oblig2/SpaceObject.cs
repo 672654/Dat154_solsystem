@@ -7,15 +7,11 @@ namespace SpaceSim {
     public class SpaceObject
     {
         public string Name { get; protected set; }
-
         public int OrbitalRadius { get; protected set; }
         public int OrbitalPeriod {  get; protected set; }
         public int ObjectRadius { get; protected set; }
         public int RotationalPeriod {  get; protected set; }
         public string ObjectColor { get; protected set; }
-
-
-        
 
 
         public SpaceObject(string name, int orbitalRadius, int orbitalPeriod, int objectRadius, int rotationalPerioid, string color)
@@ -66,15 +62,16 @@ namespace SpaceSim {
             return ObjectColor;
         }
 
-        public (int x, int y) CalculatePositions(int time)
+        public virtual (int x, int y) CalculatePositions(int time)
         {
 
-            double angle = 360 * (time / OrbitalPeriod); // Calculate angle in degrees
+            double angle = time * (OrbitalPeriod / 360); // Calculate angle in degrees
             double radians = angle * (Math.PI/180); // Convert to radians
 
             int x = (int)(GetOrbitalRadius() * Math.Cos(radians));
+            //Console.WriteLine(angle);
             int y = (int)(GetOrbitalRadius() * Math.Sin(radians));
-
+            //Console.WriteLine(y);
             return (x, y);
         }
 
@@ -124,6 +121,24 @@ namespace SpaceSim {
             Console.Write("Moon : ");
             base.Draw();
         }
+
+        public override (int x, int y) CalculatePositions(int time)
+        {
+
+            double mAngle = time * (OrbitalPeriod / 360); // Calculate angle in degrees
+            double mRadians = mAngle * (Math.PI / 180); // Convert to radians
+
+            double pAngle = time * (ParentPlanet.GetOrbitalPeriod() / 360); // Calculate angle in degrees
+            double pRadians = pAngle * (Math.PI / 180); // Convert to radians
+
+            int mx = (int)(GetOrbitalRadius() * Math.Cos(mRadians));
+            int my = (int)(GetOrbitalRadius() * Math.Sin(mRadians));
+
+            int px = (int)(ParentPlanet.GetOrbitalRadius() * Math.Cos(pRadians));
+            int py = (int)(ParentPlanet.GetOrbitalRadius() * Math.Sin(pRadians));
+            
+            return (mx + px, my + py);
+        }
     }
 
     public class Comet : SpaceObject
@@ -149,4 +164,25 @@ namespace SpaceSim {
         }
     }
 
+    public class AsteroidBelt : SpaceObject
+    {
+        public AsteroidBelt(string name, int orbitalRadius, int orbitalPeriod, int objectRadius, int rotationalPerioid, int amount, string color) : base(name, orbitalRadius, orbitalPeriod, objectRadius, rotationalPerioid, color) { }
+
+        public override void Draw()
+        {
+            Console.Write("Asteroid Belt : ");
+            base.Draw();
+        }
+    }
+
+    public class DwarfPlanet : SpaceObject
+    {
+        public DwarfPlanet(string name, int orbitalRadius, int orbitalPeriod, int objectRadius, int rotationalPerioid, string color) : base(name, orbitalRadius, orbitalPeriod, objectRadius, rotationalPerioid, color) { }
+
+        public override void Draw()
+        {
+            Console.Write("Dwarf Planet : ");
+            base.Draw();
+        }
+    }
 }
