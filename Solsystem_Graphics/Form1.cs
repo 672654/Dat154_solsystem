@@ -1,4 +1,5 @@
 using SpaceSim;  // Ensure we can use SpaceObject classes
+using ConsoleApp;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -14,37 +15,45 @@ namespace Solsystem_Graphics
         private int time = 0;
         private Dictionary<string, PictureBox> objectPictures; // Map names to PictureBoxes
         private List<SpaceObject> solarSystem;
+        
 
         public Form1()
         {
             InitializeComponent();
-            InitializeSolarSystem();
+            InitializeSystem();
             InitializeTimer();
+            this.KeyDown += new KeyEventHandler(FormKeyDown);
+            this.KeyPreview = true;
         }
 
-        private void InitializeSolarSystem()
+        private void InitializeSystem()
         {
             // Create an empty list first
-            solarSystem = new List<SpaceObject>();
 
-            // Add the Sun and planets first
-            solarSystem.Add(new Star("sun", 0, 0, 100, 100, "Yellow"));
-            solarSystem.Add(new Planet("earth", 400, 365, 100, 200, "blue"));
+            solarSystem = Astronomy.InitializeSolarSystem();
 
-            // Now find Earth before adding the Moon
-            SpaceObject earth = solarSystem.Find(p => p.Name == "earth");
-
-            // Add the Moon with a valid reference to Earth
-            solarSystem.Add(new Moon("the moon", 150, 200, 30, 200, "white", earth));
-
-            // Dictionary to map PictureBoxes to celestial objects
+            
             objectPictures = new Dictionary<string, PictureBox>
     {
-        { "sun", Sun },   // Assuming "Sun" is a PictureBox in your Form
-        { "earth", Earth },  // Assuming "Earth" is a PictureBox in your Form
-        { "the moon", The_Moon }
+        { "sun", Sun },
+        { "mercury", Mercury },
+        { "venus", Venus },
+        { "earth", Earth },
+        { "the moon", The_Moon },
+        { "mars", Mars },
+        { "jupiter", Jupiter },
+        { "saturn", Saturn },
+        { "uranus", Uranus },
+        { "neptune", Neptune },
+        { "pluto", Pluto }
     };
-
+            foreach (var obj in objectPictures)
+            {
+                PictureBox planetPicture = obj.Value;
+                SpaceObject planet = solarSystem.Find(s => s.Name == obj.Key);
+                planetPicture.Width = planet.GetObjectRadius();
+                planetPicture.Height = planet.GetObjectRadius();
+            }
             // Create a PictureBox for the moon dynamically
             //PictureBox The_Moon = new PictureBox
             //{
@@ -62,13 +71,42 @@ namespace Solsystem_Graphics
         {
             timer = new Timer();
             timer.Interval = 50;  // Update every 50 milliseconds
-            timer.Tick += Timer_Tick;
+            timer.Tick += Do_Tick;
             timer.Start();
         }
 
-        private void Timer_Tick(object sender, EventArgs e)
+        //private void ChangeTimer(int interval)
+        //{
+        //    timer.Interval = interval;
+        //}
+
+        private void FormKeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Left:
+                    if (timer.Interval <= 10)
+                    {
+                        // do nothing
+                    }
+                    else
+                    {
+                        timer.Interval -= 10;
+                    }
+                    break;
+                case Keys.Right:
+                    timer.Interval += 10;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void Do_Tick(object sender, EventArgs e)
         {
             time += 1; // Increment time step
+            Days.Text = time.ToString() + " Days";
+            TickInterval.Text = timer.Interval.ToString() + "ms";
             UpdateObjectPositions();
         }
 
@@ -78,13 +116,42 @@ namespace Solsystem_Graphics
             {
                 if (objectPictures.TryGetValue(obj.Name, out PictureBox pictureBox))
                 {
+                    //pictureBox.Size = System.Drawing.Size();
+                    
+                    SpaceObject focusBody = solarSystem.Find(s => s.Name == FocusObject.Text);
+                    var scale = 1;
+
+                    if (focusBody == null)
+                    {
+                        focusBody = solarSystem.Find(s => s.Name == "sun");
+                        pictureBox.Width = obj.ObjectRadius;
+                        pictureBox.Height = obj.ObjectRadius;
+                        scale = 1;
+                        //pictureBox.Size = new Size(obj.ObjectRadius, obj.ObjectRadius);
+                    }
+                    else if (focusBody.Name == "sun")
+                    {
+                        scale = 1;
+                        pictureBox.Width = obj.ObjectRadius;
+                        pictureBox.Height = obj.ObjectRadius;
+                        //pictureBox.Size = new Size(obj.ObjectRadius * 10, obj.ObjectRadius * 10);
+                    } else
+                    {
+                        pictureBox.Width = obj.ObjectRadius;
+                        pictureBox.Height = obj.ObjectRadius;
+                        scale = 10;
+                    }
+
+                        //SpaceObject planet = solarSystem.Find(s => s.Name == FocusObject.Text);
+                    var (offsetX, offsetY) = focusBody.CalculatePositions(time);
+
                     var (x, y) = obj.CalculatePositions(time);
 
                     // Offset so (0,0) is in the center of the form
-                    int centerX = ClientSize.Width / 2;
-                    int centerY = ClientSize.Height / 2;
+                    int centerX = ClientSize.Width / 2 - (offsetX * scale);
+                    int centerY = ClientSize.Height / 2 - (offsetY * scale);
 
-                    pictureBox.Location = new Point(centerX + x - (pictureBox.Width/2), centerY + y - (pictureBox.Height / 2));
+                    pictureBox.Location = new Point(centerX + (x * scale) - (pictureBox.Width/2), centerY + (y * scale) - (pictureBox.Height / 2));
                 }
             }
         }

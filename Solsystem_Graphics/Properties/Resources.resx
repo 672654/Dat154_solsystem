@@ -117,4 +117,44 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Blue-marble_700x525" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\Blue-marble_700x525.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Mercury_Nasa" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\Mercury_Nasa.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Earth_Western_Hemisphere_transparent_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\Earth_Western_Hemisphere_transparent_background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="The_Sun_by_the_Atmospheric_Imaging_Assembly_of_NASA's_Solar_Dynamics_Observatory_-_201008191" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\The_Sun_by_the_Atmospheric_Imaging_Assembly_of_NASA's_Solar_Dynamics_Observatory_-_20100819.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="The_Sun_by_the_Atmospheric_Imaging_Assembly_of_NASA's_Solar_Dynamics_Observatory_-_20100819" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\The_Sun_by_the_Atmospheric_Imaging_Assembly_of_NASA's_Solar_Dynamics_Observatory_-_20100819.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Pluto_in_True_Color_-_High-Res" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\Pluto_in_True_Color_-_High-Res.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FullMoon2010" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\FullMoon2010.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Neptune_Voyager2_color_calibrated" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\Neptune_Voyager2_color_calibrated.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Uranus_Nasa" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\Uranus_Nasa.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Saturn_during_Equinox" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\Saturn_during_Equinox.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Jupiter_OPAL_2024" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\Jupiter_OPAL_2024.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mars-v2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\mars-v2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Venus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\Venus.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

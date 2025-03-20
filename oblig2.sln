@@ -8,6 +8,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{2F0EEEF5-182F-4B2C-BF0B-50346C924FCB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solsystem_Graphics", "Solsystem_Graphics\Solsystem_Graphics.csproj", "{163C6515-0EB2-41D1-89B0-5E615865DD12}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5F1A3DD7-0554-4DDA-9BA8-E20F99305894} = {5F1A3DD7-0554-4DDA-9BA8-E20F99305894}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,5 +33,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EB4322A5-E83C-4FE1-8CEA-F49627BB3B38}
 	EndGlobalSection
 EndGlobal

@@ -59,5 +59,137 @@ namespace Solsystem_Graphics.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Blue_marble_700x525 {
+            get {
+                object obj = ResourceManager.GetObject("Blue-marble_700x525", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Earth_Western_Hemisphere_transparent_background {
+            get {
+                object obj = ResourceManager.GetObject("Earth_Western_Hemisphere_transparent_background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FullMoon2010 {
+            get {
+                object obj = ResourceManager.GetObject("FullMoon2010", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Jupiter_OPAL_2024 {
+            get {
+                object obj = ResourceManager.GetObject("Jupiter_OPAL_2024", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mars_v2 {
+            get {
+                object obj = ResourceManager.GetObject("mars-v2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Mercury_Nasa {
+            get {
+                object obj = ResourceManager.GetObject("Mercury_Nasa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Neptune_Voyager2_color_calibrated {
+            get {
+                object obj = ResourceManager.GetObject("Neptune_Voyager2_color_calibrated", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Pluto_in_True_Color___High_Res {
+            get {
+                object obj = ResourceManager.GetObject("Pluto_in_True_Color_-_High-Res", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Saturn_during_Equinox {
+            get {
+                object obj = ResourceManager.GetObject("Saturn_during_Equinox", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap The_Sun_by_the_Atmospheric_Imaging_Assembly_of_NASA_s_Solar_Dynamics_Observatory___20100819 {
+            get {
+                object obj = ResourceManager.GetObject("The_Sun_by_the_Atmospheric_Imaging_Assembly_of_NASA\'s_Solar_Dynamics_Observatory_" +
+                        "-_20100819", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap The_Sun_by_the_Atmospheric_Imaging_Assembly_of_NASA_s_Solar_Dynamics_Observatory___201008191 {
+            get {
+                object obj = ResourceManager.GetObject("The_Sun_by_the_Atmospheric_Imaging_Assembly_of_NASA\'s_Solar_Dynamics_Observatory_" +
+                        "-_201008191", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Uranus_Nasa {
+            get {
+                object obj = ResourceManager.GetObject("Uranus_Nasa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Venus {
+            get {
+                object obj = ResourceManager.GetObject("Venus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
